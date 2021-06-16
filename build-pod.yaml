@@ -7,7 +7,7 @@ metadata:
 spec:
    containers:  
     - name: ansible
-      image: ansible_main_ansible:latest
+      image: ansible/ansible:centos7
       command: ["tail", "-f", "/dev/null"]  
       imagePullPolicy: Always 
     - name: jnlp
