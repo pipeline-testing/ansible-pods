@@ -10,22 +10,8 @@ spec:
       image: ansible_main_ansible
       command: ["tail", "-f", "/dev/null"]  
       imagePullPolicy: Always 
-      resources:  
-        requests:
-          memory: "2Gi"
-          cpu: 1
-        limits:
-          memory: "2Gi"
-          cpu: 1
     - name: jnlp
       image: jenkins/jnlp-slave
-      resources:
-        limits:
-          cpu: 1
-          memory: 2Gi
-        requests:
-          cpu: 1
-          memory: 2Gi
       imagePullPolicy: Always
       
 
