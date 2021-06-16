@@ -9,6 +9,11 @@ pipeline {
             git 'https://github.com/pipeline-testing/ansible-pods.git'
          }
       }
+      stage('Preparation1') {
+         steps {
+            sh 'docker images'
+         }
+      }
 
      
       stage('Run ansible'){
