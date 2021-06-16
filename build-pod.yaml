@@ -7,11 +7,11 @@ metadata:
 spec:
    containers:  
     - name: ansible
-      image: ansible_main_ansible
+      image: ansible_main_ansible:latest
       command: ["tail", "-f", "/dev/null"]  
       imagePullPolicy: Always 
     - name: jnlp
-      image: jenkins/jnlp-slave
+      image: jenkins/jnlp-slave:latest
       imagePullPolicy: Always
       
 
