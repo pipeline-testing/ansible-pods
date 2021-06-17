@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
    agent any
 
    stages {
@@ -33,4 +33,27 @@ pipeline {
          
       }
     }
+}
+*/
+pipeline {
+   agent any
+
+   stages {
+      podTemplate(containers: [
+    containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7', command: 'sleep', args: '99d')
+  ]) {
+
+    node(POD_LABEL) {
+        stage('Run Ansible') {
+            git 'https://github.com/pipeline-testing/ansible-pods.git'
+            container('ansible') {
+                stage('Run ansible playbook') {
+                    sh 'ansible-playbook demo.yaml'
+                }
+            }
+        }
+
+    }
+}
+   }
 }
