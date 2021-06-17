@@ -38,7 +38,7 @@
 
 
     podTemplate(containers: [
-    containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7', command: "tail", "-f", "/dev/null" ,imagePullPolicy: Always )
+    containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7',imagePullPolicy: Always )
   
   ]) {
 
