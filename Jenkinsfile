@@ -38,7 +38,8 @@
 
 
     podTemplate(containers: [
-    containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7', command: 'sleep', args: '99d'),
+    containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7', command: ["tail", "-f", "/dev/null"] ,imagePullPolicy: Always ),
+  
   ]) {
 
     node(POD_LABEL) {
