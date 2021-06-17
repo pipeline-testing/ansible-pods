@@ -35,10 +35,9 @@
     }
 }
 */
-pipeline {
-   agent any
 
-         podTemplate(containers: [
+
+    podTemplate(containers: [
     containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7', command: 'sleep', args: '99d'),
   ]) {
 
@@ -56,4 +55,4 @@ pipeline {
     }
 }
    
-}
+
