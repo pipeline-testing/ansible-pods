@@ -42,7 +42,7 @@
   
   ]) {
 
-    node(slave) {
+    node(POD_LABEL) {
         stage('Run Ansible') {
             git 'https://github.com/pipeline-testing/ansible-pods.git'
             container('ansible') {
