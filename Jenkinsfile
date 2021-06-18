@@ -42,10 +42,9 @@
   
   ]) {
 
-    node(POD_LABEL) {
+    node(slave) {
         stage('Run Ansible') {
             git 'https://github.com/pipeline-testing/ansible-pods.git'
-            sh 'kubectl logs -l jenkins=slave -f '
             container('ansible') {
                 stage('Run Ansible playbook') {
                     sh 'ansible-playbook demo.yaml'
