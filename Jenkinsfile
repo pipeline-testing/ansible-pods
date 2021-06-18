@@ -38,7 +38,7 @@
 
 
     podTemplate(containers: [
-    containerTemplate(name: 'ansible', image: 'ansible/ansible:centos7', ttyEnabled: 'true', command: 'cat' )
+    containerTemplate(name: 'ansible', image: 'ansibLe_main_ansible', ttyEnabled: 'true', command: 'cat' )
   
   ]) {
 
