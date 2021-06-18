@@ -47,6 +47,7 @@
             git 'https://github.com/pipeline-testing/ansible-pods.git'
             container('ansible') {
                 stage('Run Ansible playbook') {
+                    sh 'ansible-galaxy collection install community.kubernetes'
                     sh 'ansible-playbook demo.yaml'
                 }
             }
