@@ -3,8 +3,6 @@
   tasks:
   - name: Create a Service object from an inline definition
     k8s:
-      kubeconfig: 'config'
-      context: 'minikube'
       state: present
       definition:
         apiVersion: v1
