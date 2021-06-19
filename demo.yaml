@@ -2,7 +2,7 @@
   gather_facts: 'false'
   tasks:
   - name: Create a Service object from an inline definition
-    k8s:
+    community.kuberenetes.k8s:
       state: present
       definition:
         apiVersion: v1
