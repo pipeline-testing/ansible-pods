@@ -2,13 +2,15 @@
   gather_facts: 'false'
   tasks:
   - name: Create a Service object from an inline definition
-    community.kubernetes.k8s:
+    k8s:
+      kubeconfig: 'config'
+      context: 'minikube'
       state: present
       definition:
         apiVersion: v1
         kind: Service
         metadata:
-          name: web
+          name: web1
           namespace: jenkins
           labels:
             app: galaxy
@@ -19,6 +21,6 @@
             service: web
           ports:
           - protocol: TCP
-            targetPort: 8000
-            name: port-8000-tcp
-            port: 8000
+            targetPort: 8001
+            name: port-8001-tcp
+            port: 8001
